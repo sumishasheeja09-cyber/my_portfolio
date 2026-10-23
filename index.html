@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sumisha S - B.Sc. Information Technology student portfolio">
+  <title>Sumisha S | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <nav class="navbar container">
+    <a href="#home" class="logo">Sumisha<span>.</span></a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero container section" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">HELLO, WORLD! 👋</p>
+      <h1>Hi, I'm <span>Sumisha S</span></h1>
+      <h2>B.Sc. Information Technology Student</h2>
+      <p class="hero-description">
+        I'm a second-year IT student who loves web development,
+        creative design and building beautiful, user-friendly websites.
+        I'm learning HTML, CSS and JavaScript by creating real projects.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <p class="hero-note">✨ Learning, creating and growing every day.</p>
+    </div>
+
+    <div class="hero-image">
+      <img src="image/sumisha.jpeg" alt="Sumisha S"
+           onerror="this.hidden=true;document.getElementById('imageFallback').hidden=false">
+      <div class="image-fallback" id="imageFallback" hidden>SS</div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="about">
+    <div class="container">
+      <p class="eyebrow">GET TO KNOW ME</p>
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-card">
+        <div class="about-icon">🎓</div>
+        <div>
+          <h3>Hi, I'm Sumisha S!</h3>
+          <p>
+            I'm pursuing my second year of B.Sc. Information Technology.
+            I'm interested in web development, frontend design and
+            interactive website experiences.
+          </p>
+          <p>
+            I enjoy learning new technologies, solving problems and
+            turning ideas into working projects. I am developing my
+            skills in responsive design, JavaScript and user interfaces.
+          </p>
+          <p><strong>Course:</strong> B.Sc. Information Technology — 2nd Year</p>
+          <p><strong>Interest:</strong> Frontend Development &amp; Creative Design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" id="skills">
+    <p class="eyebrow">WHAT I'M LEARNING</p>
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="skills-grid">
+      <article class="skill-card">
+        <div class="card-icon">🌐</div>
+        <h3>HTML</h3>
+        <p>Building structured, accessible web pages.</p>
+      </article>
+      <article class="skill-card">
+        <div class="card-icon">🎨</div>
+        <h3>CSS</h3>
+        <p>Beautiful styling, layouts and animations.</p>
+      </article>
+      <article class="skill-card">
+        <div class="card-icon">⚡</div>
+        <h3>JavaScript</h3>
+        <p>Interactive features and dynamic web applications.</p>
+      </article>
+      <article class="skill-card">
+        <div class="card-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>Websites for mobile, tablet and desktop screens.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="projects">
+    <div class="container">
+      <p class="eyebrow">MY CREATIVE WORK</p>
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <p class="section-description">Small projects built while learning web development.</p>
+
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card" data-category="design">
+          <div class="project-art palette-art">🎨</div>
+          <div class="project-body">
+            <p class="project-type">DESIGN TOOL</p>
+            <h3>Color Palette Generator</h3>
+            <p>Generate fresh colour combinations and copy HEX colour codes.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <button class="project-link" data-demo="palette">Try Live Demo ↗</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="javascript">
+          <div class="project-art weather-art">🌦️</div>
+          <div class="project-body">
+            <p class="project-type">WEATHER APPLICATION</p>
+            <h3>Weather Dashboard</h3>
+            <p>Search for a city to see current temperature, humidity and wind speed.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>API</span></div>
+            <button class="project-link" data-demo="weather">Try Live Demo ↗</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="javascript">
+          <div class="project-art task-art">✅</div>
+          <div class="project-body">
+            <p class="project-type">PRODUCTIVITY APP</p>
+            <h3>Smart Task Manager</h3>
+            <p>Add daily tasks, mark them complete and delete tasks when finished.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <button class="project-link" data-demo="tasks">Try Live Demo ↗</button>
+          </div>
+        </article>
+      </div>
+
+      <section class="demo-panel" id="paletteDemo" hidden>
+        <div class="demo-heading">
+          <div><p class="eyebrow">PROJECT 01</p><h3>Color Palette Generator</h3></div>
+          <button class="close-btn" data-close="palette" aria-label="Close">×</button>
+        </div>
+        <div class="swatches" id="swatches"></div>
+        <button class="btn btn-primary" id="generatePalette">Generate New Palette</button>
+        <p id="paletteMessage" class="message" aria-live="polite">Click any colour to copy its HEX code.</p>
+      </section>
+
+      <section class="demo-panel" id="weatherDemo" hidden>
+        <div class="demo-heading">
+          <div><p class="eyebrow">PROJECT 02</p><h3>Weather Dashboard</h3></div>
+          <button class="close-btn" data-close="weather" aria-label="Close">×</button>
+        </div>
+        <form id="weatherForm" class="search-form">
+          <label class="sr-only" for="cityInput">City name</label>
+          <input id="cityInput" type="text" placeholder="Enter city (e.g. Chennai)" required>
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <p class="message" id="weatherMessage" aria-live="polite">Enter a city to check its current weather.</p>
+        <div id="weatherResult" class="weather-result" hidden>
+          <h4 id="weatherCity"></h4>
+          <div class="weather-temp"><span id="weatherIcon">🌤️</span><strong id="temperature"></strong></div>
+          <p id="weatherDescription"></p>
+          <div class="weather-stats">
+            <div><span>💧 Humidity</span><strong id="humidity"></strong></div>
+            <div><span>💨 Wind</span><strong id="windSpeed"></strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-panel" id="tasksDemo" hidden>
+        <div class="demo-heading">
+          <div><p class="eyebrow">PROJECT 03</p><h3>Smart Task Manager</h3></div>
+          <button class="close-btn" data-close="tasks" aria-label="Close">×</button>
+        </div>
+        <form id="taskForm" class="search-form">
+          <label class="sr-only" for="taskInput">New task</label>
+          <input id="taskInput" type="text" placeholder="Write a task..." required>
+          <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="section container" id="contact">
+    <div class="contact-container">
+      <p class="eyebrow">LET'S CONNECT</p>
+      <h2 class="section-title">Contact <span>Me</span></h2>
+      <p class="section-description">
+        Have a project idea or want to connect? Send me a message.
+      </p>
+      <form class="contact-form" id="contactForm">
+        <label for="contactName">Your Name</label>
+        <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+
+        <label for="contactEmail">Your Email</label>
+        <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="contactMessage">Your Message</label>
+        <textarea id="contactMessage" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <button class="btn btn-primary" type="submit">Prepare Email ↗</button>
+        <p class="message" id="contactStatus" aria-live="polite">
+          Your default email app will open with the message prepared.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#home" class="logo">Sumisha<span>.</span></a>
+    <p>Made with 💜 by Sumisha S</p>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
