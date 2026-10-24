@@ -46,7 +46,6 @@ document.querySelectorAll(".filter-btn").forEach(button => {
 // OPEN AND CLOSE PROJECT DEMOS
 const demos = {
   palette: $("#paletteDemo"),
-  weather: $("#weatherDemo"),
   tasks: $("#tasksDemo")
 };
 
@@ -121,93 +120,7 @@ $("#generatePalette").addEventListener("click", () => {
     "New palette generated! Click a colour to copy its HEX code.";
 });
 
-// PROJECT 2: LIVE WEATHER DASHBOARD
-const weatherForm = $("#weatherForm");
-const weatherMessage = $("#weatherMessage");
-const weatherResult = $("#weatherResult");
-
-function weatherDescription(code) {
-  if (code === 0) return ["Clear sky", "☀️"];
-  if ([1, 2].includes(code)) return ["Mostly clear", "🌤️"];
-  if (code === 3) return ["Cloudy", "☁️"];
-  if ([45, 48].includes(code)) return ["Foggy", "🌫️"];
-  if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(code))
-    return ["Rainy", "🌧️"];
-  if ([71, 73, 75, 77, 85, 86].includes(code))
-    return ["Snowy", "❄️"];
-  if ([95, 96, 99].includes(code))
-    return ["Thunderstorm", "⛈️"];
-  return ["Changing conditions", "🌦️"];
-}
-
-weatherForm.addEventListener("submit", async event => {
-  event.preventDefault();
-
-  const city = $("#cityInput").value.trim();
-  if (!city) return;
-
-  weatherMessage.textContent = "Checking weather...";
-  weatherResult.hidden = true;
-
-  try {
-    // Find city coordinates using Open-Meteo geocoding.
-    const geoURL =
-      "https://geocoding-api.open-meteo.com/v1/search?name=" +
-      encodeURIComponent(city) + "&count=1&language=en&format=json";
-
-    const geoResponse = await fetch(geoURL);
-    if (!geoResponse.ok) throw new Error("City search failed.");
-
-    const geoData = await geoResponse.json();
-    const place = geoData.results?.[0];
-
-    if (!place) {
-      throw new Error("City not found. Check the spelling and try again.");
-    }
-
-    // Fetch current weather. No API key is required.
-    const weatherURL =
-      "https://api.open-meteo.com/v1/forecast?latitude=" +
-      place.latitude +
-      "&longitude=" + place.longitude +
-      "&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&timezone=auto";
-
-    const weatherResponse = await fetch(weatherURL);
-    if (!weatherResponse.ok) throw new Error("Weather service unavailable.");
-
-    const weatherData = await weatherResponse.json();
-    const current = weatherData.current;
-
-    const [description, icon] =
-      weatherDescription(current.weather_code);
-
-    $("#weatherCity").textContent =
-      `${place.name}${place.country ? ", " + place.country : ""}`;
-
-    $("#weatherIcon").textContent = icon;
-    $("#temperature").textContent =
-      `${Math.round(current.temperature_2m)}°C`;
-
-    $("#weatherDescription").textContent =
-      `${description} · Feels like ${Math.round(current.apparent_temperature)}°C`;
-
-    $("#humidity").textContent =
-      `${current.relative_humidity_2m}%`;
-
-    $("#windSpeed").textContent =
-      `${current.wind_speed_10m} km/h`;
-
-    weatherResult.hidden = false;
-    weatherMessage.textContent =
-      `Current weather · Updated ${current.time.replace("T", " ")}`;
-
-  } catch (error) {
-    weatherMessage.textContent =
-      error.message || "Unable to load weather. Check your internet connection.";
-  }
-});
-
-// PROJECT 3: SMART TASK MANAGER
+// PROJECT 2: SMART TASK MANAGER
 const taskForm = $("#taskForm");
 const taskInput = $("#taskInput");
 const taskList = $("#taskList");

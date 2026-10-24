@@ -126,17 +126,6 @@
         </article>
 
         <article class="project-card" data-category="javascript">
-          <div class="project-art weather-art">🌦️</div>
-          <div class="project-body">
-            <p class="project-type">WEATHER APPLICATION</p>
-            <h3>Weather Dashboard</h3>
-            <p>Search for a city to see current temperature, humidity and wind speed.</p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>API</span></div>
-            <button class="project-link" data-demo="weather">Try Live Demo ↗</button>
-          </div>
-        </article>
-
-        <article class="project-card" data-category="javascript">
           <div class="project-art task-art">✅</div>
           <div class="project-body">
             <p class="project-type">PRODUCTIVITY APP</p>
@@ -144,6 +133,17 @@
             <p>Add daily tasks, mark them complete and delete tasks when finished.</p>
             <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
             <button class="project-link" data-demo="tasks">Try Live Demo ↗</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="javascript">
+          <div class="project-art task-art">💼</div>
+          <div class="project-body">
+            <p class="project-type">FREELANCER TOOL</p>
+            <h3>Freelancer Project Management &amp; Payment Tracking System</h3>
+            <p>Manage freelance projects and keep payment tracking organized.</p>
+            <div class="tags"><span>Freelancing</span><span>Project Management</span><span>Payments</span></div>
+            <a class="project-link" href="https://github.com/sumishasheeja09-cyber/Freelancer-Project-Management-and-Payment-Tracking-System" target="_blank" rel="noopener noreferrer">View Repository ↗</a>
           </div>
         </article>
       </div>
@@ -158,31 +158,9 @@
         <p id="paletteMessage" class="message" aria-live="polite">Click any colour to copy its HEX code.</p>
       </section>
 
-      <section class="demo-panel" id="weatherDemo" hidden>
-        <div class="demo-heading">
-          <div><p class="eyebrow">PROJECT 02</p><h3>Weather Dashboard</h3></div>
-          <button class="close-btn" data-close="weather" aria-label="Close">×</button>
-        </div>
-        <form id="weatherForm" class="search-form">
-          <label class="sr-only" for="cityInput">City name</label>
-          <input id="cityInput" type="text" placeholder="Enter city (e.g. Chennai)" required>
-          <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-        <p class="message" id="weatherMessage" aria-live="polite">Enter a city to check its current weather.</p>
-        <div id="weatherResult" class="weather-result" hidden>
-          <h4 id="weatherCity"></h4>
-          <div class="weather-temp"><span id="weatherIcon">🌤️</span><strong id="temperature"></strong></div>
-          <p id="weatherDescription"></p>
-          <div class="weather-stats">
-            <div><span>💧 Humidity</span><strong id="humidity"></strong></div>
-            <div><span>💨 Wind</span><strong id="windSpeed"></strong></div>
-          </div>
-        </div>
-      </section>
-
       <section class="demo-panel" id="tasksDemo" hidden>
         <div class="demo-heading">
-          <div><p class="eyebrow">PROJECT 03</p><h3>Smart Task Manager</h3></div>
+          <div><p class="eyebrow">PROJECT 02</p><h3>Smart Task Manager</h3></div>
           <button class="close-btn" data-close="tasks" aria-label="Close">×</button>
         </div>
         <form id="taskForm" class="search-form">
